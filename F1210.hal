@@ -110,7 +110,7 @@ setp   pid.y.FF2       [AXIS_1]FF2
 setp   pid.y.deadband  [AXIS_1]DEADBAND
 setp   pid.y.maxoutput [AXIS_1]MAX_OUTPUT
 setp   pid.y.error-previous-target true
-setp   pid.y.maxerror  [CONSTANTS]MAX_ERROR
+setp   pid.y.maxerror  [AXIS_ALL]MAX_ERROR
 
 net y-index-enable  <=> pid.y.index-enable
 net y-enable        =>  pid.y.enable
