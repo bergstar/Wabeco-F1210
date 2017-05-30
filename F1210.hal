@@ -5,8 +5,8 @@
 loadrt trivkins
 loadrt [EMCMOT]EMCMOT servo_period_nsec=[EMCMOT]SERVO_PERIOD num_joints=[TRAJ]AXES
 loadrt hostmot2
-loadrt hm2_pci config=" num_encoders=1 num_pwmgens=0 num_stepgens=5 sserial_port_0=00xxxx" 
-setp    hm2_5i25.0.watchdog.timeout_ns 5000000
+loadrt hm2_pci config=" num_encoders=1 num_pwmgens=0 num_stepgens=5 sserial_port_0=00xxxx"
+setp   hm2_5i25.0.watchdog.timeout_ns 5000000
 loadrt pid names=pid.x,pid.y,pid.z,pid.s
 
 addf hm2_5i25.0.read          servo-thread
@@ -70,11 +70,11 @@ net x-output        =>  pid.x.output
 
 # Step Gen signals/setup
 
-setp   hm2_5i25.0.stepgen.00.dirsetup        [AXIS_0]DIRSETUP
-setp   hm2_5i25.0.stepgen.00.dirhold         [AXIS_0]DIRHOLD
-setp   hm2_5i25.0.stepgen.00.steplen         [AXIS_0]STEPLEN
-setp   hm2_5i25.0.stepgen.00.stepspace       [AXIS_0]STEPSPACE
-setp   hm2_5i25.0.stepgen.00.position-scale  [AXIS_0]STEP_SCALE
+setp   hm2_5i25.0.stepgen.00.dirsetup         [AXIS_0]DIRSETUP
+setp   hm2_5i25.0.stepgen.00.dirhold          [AXIS_0]DIRHOLD
+setp   hm2_5i25.0.stepgen.00.steplen          [AXIS_0]STEPLEN
+setp   hm2_5i25.0.stepgen.00.stepspace        [AXIS_0]STEPSPACE
+setp   hm2_5i25.0.stepgen.00.position-scale   [AXIS_0]STEP_SCALE
 setp   hm2_5i25.0.stepgen.00.step_type        0
 setp   hm2_5i25.0.stepgen.00.control-type     1
 setp   hm2_5i25.0.stepgen.00.maxaccel         [AXIS_0]STEPGEN_MAXACCEL
@@ -121,11 +121,11 @@ net y-output        =>  pid.y.output
 
 # Step Gen signals/setup
 
-setp   hm2_5i25.0.stepgen.01.dirsetup        [AXIS_1]DIRSETUP
-setp   hm2_5i25.0.stepgen.01.dirhold         [AXIS_1]DIRHOLD
-setp   hm2_5i25.0.stepgen.01.steplen         [AXIS_1]STEPLEN
-setp   hm2_5i25.0.stepgen.01.stepspace       [AXIS_1]STEPSPACE
-setp   hm2_5i25.0.stepgen.01.position-scale  [AXIS_1]STEP_SCALE
+setp   hm2_5i25.0.stepgen.01.dirsetup         [AXIS_1]DIRSETUP
+setp   hm2_5i25.0.stepgen.01.dirhold          [AXIS_1]DIRHOLD
+setp   hm2_5i25.0.stepgen.01.steplen          [AXIS_1]STEPLEN
+setp   hm2_5i25.0.stepgen.01.stepspace        [AXIS_1]STEPSPACE
+setp   hm2_5i25.0.stepgen.01.position-scale   [AXIS_1]STEP_SCALE
 setp   hm2_5i25.0.stepgen.01.step_type        0
 setp   hm2_5i25.0.stepgen.01.control-type     1
 setp   hm2_5i25.0.stepgen.01.maxaccel         [AXIS_1]STEPGEN_MAXACCEL
@@ -172,11 +172,11 @@ net z-output        =>  pid.z.output
 
 # Step Gen signals/setup
 
-setp   hm2_5i25.0.stepgen.02.dirsetup        [AXIS_2]DIRSETUP
-setp   hm2_5i25.0.stepgen.02.dirhold         [AXIS_2]DIRHOLD
-setp   hm2_5i25.0.stepgen.02.steplen         [AXIS_2]STEPLEN
-setp   hm2_5i25.0.stepgen.02.stepspace       [AXIS_2]STEPSPACE
-setp   hm2_5i25.0.stepgen.02.position-scale  [AXIS_2]STEP_SCALE
+setp   hm2_5i25.0.stepgen.02.dirsetup         [AXIS_2]DIRSETUP
+setp   hm2_5i25.0.stepgen.02.dirhold          [AXIS_2]DIRHOLD
+setp   hm2_5i25.0.stepgen.02.steplen          [AXIS_2]STEPLEN
+setp   hm2_5i25.0.stepgen.02.stepspace        [AXIS_2]STEPSPACE
+setp   hm2_5i25.0.stepgen.02.position-scale   [AXIS_2]STEP_SCALE
 setp   hm2_5i25.0.stepgen.02.step_type        0
 setp   hm2_5i25.0.stepgen.02.control-type     1
 setp   hm2_5i25.0.stepgen.02.maxaccel         [AXIS_2]STEPGEN_MAXACCEL
@@ -266,7 +266,7 @@ net spindle-manual-cw     halui.spindle.forward
 net spindle-manual-ccw    halui.spindle.reverse
 net spindle-manual-stop   halui.spindle.stop
 net machine-is-on         halui.machine.is-on
-net jog-speed             halui.jog-speed 
+net jog-speed             halui.jog-speed
 net MDI-mode              halui.mode.is-mdi
 
 #  ---coolant signals---
@@ -299,4 +299,3 @@ net tool-change-request     <=  iocontrol.0.tool-change
 net tool-change-confirmed   =>  iocontrol.0.tool-changed
 net tool-prepare-request    <=  iocontrol.0.tool-prepare
 net tool-prepare-confirmed  =>  iocontrol.0.tool-prepared
-
